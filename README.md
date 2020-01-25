@@ -32,3 +32,8 @@ But if you need to define a external config file use the following config option
 ## Known Issues
 
 - Possibility to show the additional context menu items only while in a test file e.g. test.(js|ts). Currently its shown, no matter which file.
+
+## To Install locally
+- npm run compile
+- npm run package
+- Import vsix file from vscode
