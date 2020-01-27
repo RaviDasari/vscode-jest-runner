@@ -55,6 +55,8 @@ export function activate(context: vscode.ExtensionContext) {
 
     const terminal = getLatestTerminal();
     terminal.show();
+    // add file path to increase test run speed
+    command = `${command} --verbose --runTestsByPath ${editor.document.fileName}`;
     terminal.sendText(command);
   });
 
@@ -84,6 +86,10 @@ export function activate(context: vscode.ExtensionContext) {
     }
     config.args.push('-t');
     config.args.push(testName);
+
+    // add file path to increase test run speed
+    config.args.push('--runTestsByPath');
+    config.args.push(editor.document.fileName);
 
     await editor.document.save();
 
